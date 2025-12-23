@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -17,16 +18,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
     </style>
 <script type="importmap">
 {
@@ -36,16 +27,15 @@
     "react/": "https://esm.sh/react@^19.2.3/",
     "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.3.0"
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
-    <!-- Vite, buradaki .tsx dosyasını otomatik olarak derleyip .js yapacaktır -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- Başındaki / işaretini kaldırdık, bu GitHub Pages için kritiktir -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
