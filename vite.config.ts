@@ -4,11 +4,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Boş string veya './' GitHub Pages için en güvenli olanıdır.
+  // Hem kullanıcı.github.io hem de kullanıcı.github.io/repo-adi formatına uyum sağlar
   base: './',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: false
+    assetsDir: 'assets'
+  },
+  server: {
+    port: 3000
   }
 });
