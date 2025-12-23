@@ -1,23 +1,10 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
+// GitHub Pages genellikle 'kullaniciadi.github.io/repo-adi/' şeklinde olduğu için
+// base kısmına depo adını otomatik olarak alacak bir mantık kuruyoruz.
+export default defineConfig({
+  plugins: [react()],
+  base: './', // Göreceli yollar kullanarak her türlü klasör yapısında çalışmasını sağlar
 });
